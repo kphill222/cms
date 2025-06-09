@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional CMS with Backend Management">
+    <title>Professional CMS with Backend</title>
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Login Screen -->
+    <main class="login" id="loginScreen" aria-label="Login Section">
+        <div class="login__card">
+            <h1 class="login__title">CMS Login</h1>
+            <form id="loginForm" class="form">
+                <div class="form-group">
+                    <label for="username" class="form-group__label">Username</label>
+                    <input type="text" id="username" name="username" class="form-group__control" required 
+                           aria-required="true" autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-group__label">Password</label>
+                    <input type="password" id="password" name="password" class="form-group__control" required
+                           aria-required="true" autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn btn--primary mt-2">
+                    <span class="btn__text">Login</span>
+                    <span class="btn__loader" aria-hidden="true"></span>
+                </button>
+                <p id="loginMessage" role="alert" class="mt-2"></p>
+            </form>
+        </div>
+    </main>
+
+    <!-- Admin Interface -->
+    <div class="admin" id="adminInterface" hidden>
+        <div class="container">
+            <header class="header">
+                <h1 class="header__title">CMS Dashboard</h1>
+                <button class="btn btn--danger btn--small" id="logoutBtn">
+                    <span class="btn__text">Logout</span>
+                </button>
+            </header>
+
+            <nav class="tabs" role="tablist" aria-label="Admin Sections">
+                <button class="tab tab--active" 
+                        role="tab" 
+                        aria-selected="true" 
+                        aria-controls="clientsTab" 
+                        data-tab="clientsTab">
+                    Clients
+                </button>
+                <button class="tab" 
+                        role="tab" 
+                        aria-selected="false" 
+                        aria-controls="pagesTab"
+                        data-tab="pagesTab"
+                        tabindex="-1">
+                    Pages
+                </button>
+                <button class="tab" 
+                        role="tab" 
+                        aria-selected="false" 
+                        aria-controls="mediaTab"
+                        data-tab="mediaTab"
+                        tabindex="-1">
+                    Media
+                </button>
+                <button class="tab" 
+                        role="tab" 
+                        aria-selected="false" 
+                        aria-controls="usersTab"
+                        data-tab="usersTab"
+                        tabindex="-1">
+                    Users
+                </button>
+            </nav>
+
+            <div class="tab-content" id="clientsTab">
+                <h2>Client Management</h2>
+                <p>Manage your client websites here. Each client can have their own CMS instance or configuration.</p>
+                <button class="btn btn-success btn-small" style="margin-top: 20px;">Add New Client</button>
+
+                <div class="client-grid">
+                    <!-- Example Client Card 1 -->
+                    <div class="client-card">
+                        <h3>Client A</h3>
+                        <div class="client-info">
+                            <p><strong>Contact:</strong> Jane Doe</p>
+                            <p><strong>Email:</strong> jane.doe@clienta.com</p>
+                            <p><strong>Status:</strong> Active</p>
+                        </div>
+                        <div class="domain-config">
+                            <h4>Domain Configuration</h4>
+                            <p><strong>Primary Domain:</strong> clienta.com</p>
+                            <p><strong>Subdomains:</strong> blog.clienta.com</p>
+                            <p><strong>CMS Version:</strong> 1.2.0</p>
+                        </div>
+                        <div class="client-actions" style="margin-top: 15px;">
+                            <button class="btn btn-small btn-warning">Edit</button>
+                            <button class="btn btn-small btn-danger">Delete</button>
+                            <button class="btn btn-small">View CMS</button>
+                        </div>
+                    </div>
+
+                    <!-- Example Client Card 2 -->
+                    <div class="client-card">
+                        <h3>Client B</h3>
+                        <div class="client-info">
+                            <p><strong>Contact:</strong> John Smith</p>
+                            <p><strong>Email:</strong> john.smith@clientb.org</p>
+                            <p><strong>Status:</strong> Active</p>
+                        </div>
+                        <div class="domain-config">
+                            <h4>Domain Configuration</h4>
+                            <p><strong>Primary Domain:</strong> clientb.org</p>
+                            <p><strong>Subdomains:</strong> shop.clientb.org</p>
+                            <p><strong>CMS Version:</strong> 1.2.0</p>
+                        </div>
+                        <div class="client-actions" style="margin-top: 15px;">
+                            <button class="btn btn-small btn-warning">Edit</button>
+                            <button class="btn btn-small btn-danger">Delete</button>
+                            <button class="btn btn-small">View CMS</button>
+                        </div>
+                    </div>
+
+                    <!-- Example Client Card 3 -->
+                    <div class="client-card">
+                        <h3>Client C</h3>
+                        <div class="client-info">
+                            <p><strong>Contact:</strong> Alice Brown</p>
+                            <p><strong>Email:</strong> alice.brown@clientc.net</p>
+                            <p><strong>Status:</strong> Inactive</p>
+                        </div>
+                        <div class="domain-config">
+                            <h4>Domain Configuration</h4>
+                            <p><strong>Primary Domain:</strong> clientc.net</p>
+                            <p><strong>Subdomains:</strong> dev.clientc.net</p>
+                            <p><strong>CMS Version:</strong> 1.1.5</p>
+                        </div>
+                        <div class="client-actions" style="margin-top: 15px;">
+                            <button class="btn btn-small btn-warning">Edit</button>
+                            <button class="btn btn-small btn-danger">Delete</button>
+                            <button class="btn btn-small">View CMS</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="pagesTab" style="display: none;">
+                <h2>Page Management</h2>
+                <p>Create, edit, and manage all static pages for your client websites.</p>
+                <button class="btn btn-success btn-small" style="margin-top: 20px;">Add New Page</button>
+
+                <ul class="content-list" style="margin-top: 20px;">
+                    <li class="content-item">
+                        <span class="content-item-title">Homepage</span>
+                        <div class="content-item-actions">
+                            <button class="btn btn-small btn-warning">Edit</button>
+                            <button class="btn btn-small btn-danger">Delete</button>
+                        </div>
+                    </li>
+                    <li class="content-item">
+                        <span class="content-item-title">About Us</span>
+                        <div class="content-item-actions">
+                            <button class="btn btn-small btn-warning">Edit</button>
+                            <button class="btn btn-small btn-danger">Delete</button>
+                        </div>
+                    </li>
+                    <li class="content-item">
+                        <span class="content-item-title">Contact Page</span>
+                        <div class="content-item-actions">
+                            <button class="btn btn-small btn-warning">Edit</button>
+                            <button class="btn btn-small btn-danger">Delete</button>
+                        </div>
+                    </li>
+                    <li class="content-item">
+                        <span class="content-item-title">Privacy Policy</span>
+                        <div class="content-item-actions">
+                            <button class="btn btn-small btn-warning">Edit</button>
+                            <button class="btn btn-small btn-danger">Delete</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="mediaTab" style="display: none;">
+                <h2>Media Library</h2>
+                <p>Upload and manage images, videos, and documents for your content.</p>
+                <button class="btn btn-success btn-small" style="margin-top: 20px;">Upload New Media</button>
+
+                <div class="client-grid" style="margin-top: 20px;">
+                    <!-- Example Media Item -->
+                    <div class="client-card">
+                        <h3>image_001.jpg</h3>
+                        <div class="client-info">
+                            <p><strong>Type:</strong> Image</p>
+                            <p><strong>Size:</strong> 1.2 MB</p>
+                            <p><strong>Uploaded:</strong> 2025-05-20</p>
+                        </div>
+                        <div class="client-actions" style="margin-top: 15px;">
+                            <button class="btn btn-small btn-warning">View</button>
+                            <button class="btn btn-small btn-danger">Delete</button>
+                        </div>
+                    </div>
+                    <div class="client-card">
+                        <h3>document_report.pdf</h3>
+                        <div class="client-info">
+                            <p><strong>Type:</strong> Document</p>
+                            <p><strong>Size:</strong> 5.6 MB</p>
+                            <p><strong>Uploaded:</strong> 2025-05-15</p>
+                        </div>
+                        <div class="client-actions" style="margin-top: 15px;">
+                            <button class="btn btn-small btn-warning">View</button>
+                            <button class="btn btn-small btn-danger">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="usersTab" style="display: none;">
+                <h2>User Management</h2>
+                <p>Manage CMS users and their roles.</p>
+                <button class="btn btn-success btn-small" style="margin-top: 20px;">Add New User</button>
+
+                <ul class="content-list" style="margin-top: 20px;">
+                    <li class="content-item">
+                        <span class="content-item-title">Admin User (Administrator)</span>
+                        <div class="content-item-actions">
+                            <button class="btn btn-small btn-warning">Edit</button>
+                            <button class="btn btn-small btn-danger">Delete</button>
+                        </div>
+                    </li>
+                    <li class="content-item">
+                        <span class="content-item-title">Editor User (Editor)</span>
+                        <div class="content-item-actions">
+                            <button class="btn btn-small btn-warning">Edit</button>
+                            <button class="btn btn-small btn-danger">Delete</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <script type="module" src="/script.js"></script>
+</body>
+</html>
